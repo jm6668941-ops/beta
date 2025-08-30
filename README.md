@@ -23,7 +23,7 @@
             position:fixed; 
             top:0; 
             width:100%; 
-            z-index:1000;  /* Asegura que se quede encima de otros elementos */
+            z-index:1000; 
             border-bottom: 3px solid #ffd700; 
         }
         header .logo-title { display:flex; align-items:center; gap:15px; }
@@ -187,3 +187,4 @@
 
 </body>
 </html>
+
