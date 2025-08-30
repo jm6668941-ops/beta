@@ -20,9 +20,10 @@
             display:flex; 
             justify-content:space-between; 
             align-items:center; 
-            position:sticky; 
+            position:fixed; 
             top:0; 
-            z-index:1000; 
+            width:100%; 
+            z-index:1000;  /* Asegura que se quede encima de otros elementos */
             border-bottom: 3px solid #ffd700; 
         }
         header .logo-title { display:flex; align-items:center; gap:15px; }
@@ -42,6 +43,7 @@
             color:#fff;
             position:relative;
             padding:20px;
+            margin-top: 70px; /* Este margen ayuda a que no se superponga con el header */
         }
         .hero h2 { font-size:3rem; text-shadow:2px 2px 8px rgba(0,0,0,0.6); }
         .hero p { font-size:1.2rem; margin-top:15px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); }
