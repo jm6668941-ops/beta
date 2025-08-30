@@ -1,110 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instituto Polivalente San José de Cupertino</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-/* ----------------- RESET Y ESTILOS GENERALES ----------------- */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
-body { background:#f5f5f5; color:#333; line-height:1.6; overflow-x:hidden; }
-a { text-decoration:none; }
-img { max-width:100%; display:block; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Polivalente San José de Cupertino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ----------------- RESET Y ESTILOS GENERALES ----------------- */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+        body { background:#f5f5f5; color:#333; line-height:1.6; overflow-x:hidden; }
+        a { text-decoration:none; }
+        img { max-width:100%; display:block; }
 
-/* ----------------- HEADER ----------------- */
-header { background:#0056a6; color:#fff; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; animation: slideDown 1s ease; border-bottom: 3px solid #ffd700; }
-header .logo-title { display:flex; align-items:center; gap:15px; }
-header img { height:50px; border-radius:8px; }
-header h1 { font-size:22px; font-weight:700; animation: fadeIn 2s ease; }
-nav a { color:#fff; margin-left:20px; font-weight:500; transition:color 0.3s; }
-nav a:hover { color:#ffd700; }
+        /* ----------------- HEADER ----------------- */
+        header { 
+            background:#0056a6; 
+            color:#fff; 
+            padding:15px 50px; 
+            display:flex; 
+            justify-content:space-between; 
+            align-items:center; 
+            position:sticky; 
+            top:0; 
+            z-index:1000; 
+            border-bottom: 3px solid #ffd700; 
+        }
+        header .logo-title { display:flex; align-items:center; gap:15px; }
+        header img { height:50px; border-radius:8px; }
+        header h1 { font-size:22px; font-weight:700; }
+        nav a { color:#fff; margin-left:20px; font-weight:500; transition:color 0.3s; }
+        nav a:hover { color:#ffd700; }
 
-/* ----------------- HERO ----------------- */
-.hero {
-  height:80vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("img/fondo.png") center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-  position:relative;
-  padding:20px;
-}
-.hero h2 { font-size:3rem; text-shadow:2px 2px 8px rgba(0,0,0,0.6); transition:opacity 0.5s ease; }
-.hero p { font-size:1.2rem; margin-top:15px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); transition:opacity 0.5s ease; }
-.hero .btn { display:inline-block; background:linear-gradient(45deg,#ffd700,#ffae00); color:#000; padding:15px 30px; margin-top:20px; border-radius:30px; font-weight:700; position:relative; overflow:hidden; transition:all 0.4s; }
-.hero .btn::after { content:''; position:absolute; width:100%; height:0%; top:0; left:0; background:rgba(255,255,255,0.2); transition:0.4s; }
-.hero .btn:hover::after { height:100%; }
-.hero .btn:hover { transform:scale(1.05); color:#fff; }
+        /* ----------------- HERO ----------------- */
+        .hero {
+            height:80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("img/fondo.png") center/cover no-repeat;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:#fff;
+            position:relative;
+            padding:20px;
+        }
+        .hero h2 { font-size:3rem; text-shadow:2px 2px 8px rgba(0,0,0,0.6); }
+        .hero p { font-size:1.2rem; margin-top:15px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); }
+        .hero .btn { display:inline-block; background:linear-gradient(45deg,#ffd700,#ffae00); color:#000; padding:15px 30px; margin-top:20px; border-radius:30px; font-weight:700; position:relative; overflow:hidden; transition:all 0.4s; }
+        .hero .btn:hover { transform:scale(1.05); color:#fff; }
 
-/* ----------------- CARRUSEL DE IMÁGENES ----------------- */
-.carousel-container { position:relative; max-width:1000px; margin:40px auto; overflow:hidden; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.15); }
-.carousel-title { text-align:center; font-size:2rem; color:#0056a6; margin-bottom:15px; }
-.carousel-slide { display:flex; width:100%; height:400px; }
-.carousel-slide img { width:100%; height:100%; object-fit:cover; flex-shrink:0; flex-grow:0; }
-.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background-color:rgba(0,0,0,0.4); color:white; border:none; padding:15px; cursor:pointer; z-index:1; transition: background-color 0.3s; font-size:1.5rem; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; }
-.carousel-btn:hover { background-color:rgba(0,0,0,0.7); }
-#prevBtn { left:20px; }
-#nextBtn { right:20px; }
-.carousel-nav { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:1; }
-.carousel-indicator { width:12px; height:12px; background-color:rgba(255,255,255,0.5); border-radius:50%; cursor:pointer; transition:background-color 0.3s; }
-.carousel-indicator.active { background-color:white; }
+        /* ----------------- CARRUSEL DE IMÁGENES ----------------- */
+        .carousel-container { 
+            position:relative; 
+            max-width:1000px; 
+            margin:40px auto; 
+            overflow:hidden; 
+            border-radius:12px; 
+            box-shadow:0 6px 16px rgba(0,0,0,0.15); 
+        }
+        .carousel-title { text-align:center; font-size:2rem; color:#0056a6; margin-bottom:15px; }
+        .carousel-slide { display:flex; width:100%; height:400px; }
+        .carousel-btn { 
+            position:absolute; 
+            top:50%; 
+            transform:translateY(-50%); 
+            background-color:rgba(0,0,0,0.4); 
+            color:white; 
+            padding:15px; 
+            cursor:pointer; 
+            z-index:1; 
+            font-size:1.5rem; 
+            border-radius:50%; 
+            width:50px; 
+            height:50px; 
+            display:flex; 
+            align-items:center; 
+            justify-content:center; 
+        }
+        .carousel-btn:hover { background-color:rgba(0,0,0,0.7); }
+        .carousel-nav { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:1; }
+        .carousel-indicator { width:12px; height:12px; background-color:rgba(255,255,255,0.5); border-radius:50%; cursor:pointer; }
+        .carousel-indicator.active { background-color:white; }
 
-/* ----------------- SECCIONES ----------------- */
-section { padding:60px 50px; max-width:1200px; margin:auto; }
-section h2 { text-align:center; margin-bottom:40px; font-size:2rem; color:#0056a6; animation: fadeIn 1.5s ease; }
+        /* ----------------- SECCIONES ----------------- */
+        section { padding:60px 50px; max-width:1200px; margin:auto; }
+        section h2 { text-align:center; margin-bottom:40px; font-size:2rem; color:#0056a6; }
 
-/* ----------------- NOSOTROS ----------------- */
-.nosotros { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
-.nosotros img { border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:transform 0.3s; animation: fadeLeft 1.5s ease; }
-.nosotros img:hover { transform:scale(1.05); }
-.nosotros p { font-size:1.05rem; animation: fadeRight 1.5s ease; }
+        /* ----------------- NOSOTROS ----------------- */
+        .nosotros { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+        .nosotros img { border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+        .nosotros p { font-size:1.05rem; }
 
-/* ----------------- MISION Y VISION ----------------- */
-.mision-vision { display:grid; grid-template-columns:1fr 1fr; gap:30px; text-align:center; }
-.mision-vision div { background:#fff; padding:25px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:transform 0.3s, box-shadow 0.3s; animation: fadeUp 2s ease; }
-.mision-vision div:hover { transform:translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.2); }
-.mision-vision h3 { color:#0056a6; margin-bottom:15px; }
+        /* ----------------- MISION Y VISION ----------------- */
+        .mision-vision { display:grid; grid-template-columns:1fr 1fr; gap:30px; text-align:center; }
+        .mision-vision div { background:#fff; padding:25px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+        .mision-vision h3 { color:#0056a6; margin-bottom:15px; }
 
-/* ----------------- PROGRAMAS ----------------- */
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.card { background:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; transition:transform 0.5s, box-shadow 0.5s; animation: fadeUp 2s ease; }
-.card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 20px 35px rgba(0,0,0,0.2); }
-.card h3 { margin-bottom:10px; color:#0056a6; }
-.card p { font-size:1rem; }
+        /* ----------------- PROGRAMAS ----------------- */
+        .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+        .card { background:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; }
+        .card h3 { margin-bottom:10px; color:#0056a6; }
+        .card p { font-size:1rem; }
 
-/* ----------------- ADMISIONES ----------------- */
-.admisiones ul { list-style:none; max-width:700px; margin:auto; padding:0; }
-.admisiones ul li { background:#fff; padding:18px; margin:12px 0; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.1); animation: fadeUp 1.5s ease; }
+        /* ----------------- ADMISIONES ----------------- */
+        .admisiones ul { list-style:none; max-width:700px; margin:auto; padding:0; }
+        .admisiones ul li { background:#fff; padding:18px; margin:12px 0; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
 
-/* ----------------- CONTACTO ----------------- */
-.contacto form { display:flex; flex-direction:column; max-width:650px; margin:auto; padding:30px; background:#fff; border-radius:15px; box-shadow:0 15px 35px rgba(0,0,0,0.15); transition:transform 0.3s, box-shadow 0.3s; animation: fadeIn 2s ease; }
-.contacto form:hover { transform:translateY(-8px); box-shadow:0 25px 50px rgba(0,0,0,0.25); }
-.contacto input, .contacto textarea { padding:18px; margin:12px 0; border:1px solid #ccc; border-radius:12px; transition:all 0.3s ease; font-size:16px; width:100%; box-shadow:inset 0 2px 4px rgba(0,0,0,0.05); }
-.contacto input:focus, .contacto textarea:focus { border-color:#0056a6; box-shadow:0 0 12px rgba(0,86,166,0.3); }
-.contacto button { background:#0056a6; color:#fff; border:none; padding:18px; border-radius:12px; cursor:pointer; font-weight:700; font-size:16px; margin-top:10px; transition:all 0.3s; }
-.contacto button:hover { background:#003f75; transform:scale(1.05); }
+        /* ----------------- CONTACTO ----------------- */
+        .contacto form { display:flex; flex-direction:column; max-width:650px; margin:auto; padding:30px; background:#fff; border-radius:15px; box-shadow:0 15px 35px rgba(0,0,0,0.15); }
+        .contacto input, .contacto textarea { padding:18px; margin:12px 0; border:1px solid #ccc; border-radius:12px; }
+        .contacto button { background:#0056a6; color:#fff; border:none; padding:18px; border-radius:12px; cursor:pointer; font-weight:700; font-size:16px; margin-top:10px; }
 
-/* ----------------- FOOTER ----------------- */
-footer { background:#003f75; color:#fff; text-align:center; padding:20px; margin-top:40px; animation: fadeIn 2.5s ease; }
+        /* ----------------- FOOTER ----------------- */
+        footer { background:#003f75; color:#fff; text-align:center; padding:20px; margin-top:40px; }
 
-/* ----------------- VALIDACIÓN FORMULARIO ----------------- */
-.error-message { color:red; font-size:14px; margin-top:5px; display:block; }
-input.error, textarea.error { border:2px solid red; background:#ffecec; }
-input.success, textarea.success { border:2px solid green; background:#ecffec; }
-
-/* ----------------- ANIMACIONES ----------------- */
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-@keyframes fadeUp { from{opacity:0; transform:translateY(50px);} to{opacity:1; transform:translateY(0);} }
-@keyframes fadeLeft { from{opacity:0; transform:translateX(-50px);} to{opacity:1; transform:translateX(0);} }
-@keyframes fadeRight { from{opacity:0; transform:translateX(50px);} to{opacity:1; transform:translateX(0);} }
-@keyframes slideDown { from{transform:translateY(-100%);} to{transform:translateY(0);} }
-
-/* ----------------- RESPONSIVE ----------------- */
-@media(max-width:900px){ .nosotros, .mision-vision { grid-template-columns:1fr; } header { flex-direction:column; text-align:center; gap:10px; } nav a { margin:5px; } .carousel-slide{height:250px;} .hero h2{font-size:2rem;} .hero p{font-size:1rem;} }
-</style>
+        /* ----------------- RESPONSIVE ----------------- */
+        @media(max-width:900px){ 
+            .nosotros, .mision-vision { grid-template-columns:1fr; } 
+            header { flex-direction:column; text-align:center; gap:10px; } 
+            nav a { margin:5px; } 
+            .carousel-slide{height:250px;} 
+            .hero h2{font-size:2rem;} 
+            .hero p{font-size:1rem;} 
+        }
+    </style>
 </head>
 <body>
 
@@ -126,8 +144,8 @@ input.success, textarea.success { border:2px solid green; background:#ecffec; }
 <!-- ----------------- HERO ----------------- -->
 <section class="hero">
   <div>
-    <h2><span id="hero-text">Formando Líderes del Futuro</span></h2>
-    <p id="hero-subtext">Educación integral con valores y excelencia académica</p>
+    <h2>Formando Líderes del Futuro</h2>
+    <p>Educación integral con valores y excelencia académica</p>
     <a href="#contacto" class="btn">Inscríbete Ahora</a>
   </div>
 </section>
@@ -142,91 +160,18 @@ input.success, textarea.success { border:2px solid green; background:#ecffec; }
   </div>
   <button class="carousel-btn" id="prevBtn">&#10094;</button>
   <button class="carousel-btn" id="nextBtn">&#10095;</button>
-  <div class="carousel-nav">
-    <div class="carousel-indicator active"></div>
-    <div class="carousel-indicator"></div>
-    <div class="carousel-indicator"></div>
-  </div>
 </div>
 
-<!-- ----------------- NOSOTROS ----------------- -->
+<!-- ----------------- SECCIONES ----------------- -->
 <section id="nosotros">
   <h2>Sobre Nosotros</h2>
   <div class="nosotros">
     <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=900&q=80" alt="Aulas modernas">
     <p>
-      <strong>En el Instituto Polivalente San José de Cupertino creemos en una educación moderna, con instalaciones de primer nivel,
+      En el Instituto Polivalente San José de Cupertino creemos en una educación moderna, con instalaciones de primer nivel,
       programas innovadores y un equipo docente comprometido con el futuro de nuestros estudiantes.
-      Nuestro objetivo es formar jóvenes íntegros, críticos y preparados para los retos del mañana.</strong>
     </p>
   </div>
-</section>
-
-<!-- ----------------- MISION Y VISION ----------------- -->
-<section id="mision-vision">
-  <h2>Misión y Visión</h2>
-  <div class="mision-vision">
-    <div>
-      <h3>Misión</h3>
-      <p>
-        Brindar una educación integral basada en valores, innovación y excelencia académica,
-        preparando a nuestros estudiantes para ser ciudadanos responsables, críticos y comprometidos
-        con el desarrollo de su comunidad y del país.
-      </p>
-    </div>
-    <div>
-      <h3>Visión</h3>
-      <p>
-        Ser un instituto líder en la formación de profesionales competentes,
-        capaces de enfrentar los desafíos del mundo moderno con ética, creatividad y un profundo compromiso social.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ----------------- PROGRAMAS ----------------- -->
-<section id="programas">
-  <h2>Nuestros Programas</h2>
-  <div class="cards">
-    <div class="card"><h3>Preescolar</h3><p>Estimulación temprana y desarrollo integral en un ambiente seguro y creativo.</p></div>
-    <div class="card"><h3>Primaria</h3><p>Formación en valores, habilidades académicas y sociales para niños curiosos.</p></div>
-    <div class="card"><h3>Secundaria</h3><p>Educación orientada a la excelencia académica y la preparación universitaria.</p></div>
-    <div class="card"><h3>Bachillerato Técnico</h3><p>Programas técnicos especializados en informática, ciencias y humanidades.</p></div>
-  </div>
-</section>
-
-<!-- ----------------- ADMISIONES ----------------- -->
-<section id="admisiones" class="admisiones">
-  <h2>Admisiones</h2>
-  <p style="text-align:center; max-width:800px; margin:auto; margin-bottom:20px;">
-    El proceso de admisión en el Instituto Polivalente San José de Cupertino está diseñado para garantizar
-    que cada estudiante encuentre en nuestro centro el ambiente ideal para su desarrollo académico y personal.
-  </p>
-  <ul>
-    <li><strong>1. Solicitud de inscripción:</strong> Completar el formulario en línea o en las oficinas del instituto.</li>
-    <li><strong>2. Documentos requeridos:</strong> Partida de nacimiento, constancia de estudios anteriores, 2 fotografías tamaño carnet y copia de identidad del responsable.</li>
-    <li><strong>3. Entrevista inicial:</strong> Reunión con el estudiante y sus padres o encargados.</li>
-    <li><strong>4. Prueba diagnóstica:</strong> Evaluación para conocer el nivel académico del aspirante.</li>
-    <li><strong>5. Confirmación de matrícula:</strong> Una vez aprobados los pasos anteriores, se procede al pago de matrícula y mensualidades.</li>
-  </ul>
-  <p style="text-align:center; margin-top:20px;">
-    Para más información comuníquese con nuestro departamento de admisiones al <strong>(+504) 2222-0000</strong> o al correo <strong>admisiones@ipsjcupertino.edu</strong>.
-  </p>
-</section>
-
-<!-- ----------------- CONTACTO ----------------- -->
-<section id="contacto" class="contacto">
-  <h2>Contáctanos</h2>
-  <form id="contact-form">
-    <input type="text" id="nombre" placeholder="Nombre completo" required>
-    <small class="error-message" id="error-nombre"></small>
-    <input type="email" id="correo" placeholder="Correo electrónico" required>
-    <small class="error-message" id="error-correo"></small>
-    <textarea id="mensaje" rows="6" placeholder="Escribe tu mensaje" required></textarea>
-    <small class="error-message" id="error-mensaje"></small>
-    <button type="submit">Enviar</button>
-    <p id="form-success" style="color:green; font-weight:bold; margin-top:10px;"></p>
-  </form>
 </section>
 
 <!-- ----------------- FOOTER ----------------- -->
@@ -234,67 +179,9 @@ input.success, textarea.success { border:2px solid green; background:#ecffec; }
   <p>&copy; 2025 Instituto Polivalente San José de Cupertino | Todos los derechos reservados</p>
 </footer>
 
-<!-- ----------------- SCRIPT ----------------- -->
 <script>
-/* ----------------- HERO TEXTOS ----------------- */
-const heroTexts = [
-  { title:"Formando Líderes del Futuro", subtitle:"Educación integral con valores y excelencia académica" },
-  { title:"Aprendizaje Activo", subtitle:"Participación y creatividad en cada actividad educativa" },
-  { title:"Valores y Civismo", subtitle:"Formación integral basada en respeto y responsabilidad" },
-  { title:"Innovación y Tecnología", subtitle:"Preparando a nuestros estudiantes para el mundo moderno" }
-];
-let index = 0;
-const titleElement = document.getElementById('hero-text');
-const subtitleElement = document.getElementById('hero-subtext');
-setInterval(()=>{
-  index = (index+1)%heroTexts.length;
-  titleElement.style.opacity = 0;
-  subtitleElement.style.opacity = 0;
-  setTimeout(()=>{
-    titleElement.textContent = heroTexts[index].title;
-    subtitleElement.textContent = heroTexts[index].subtitle;
-    titleElement.style.opacity = 1;
-    subtitleElement.style.opacity = 1;
-  },500);
-},5000);
-
-/* ----------------- CARRUSEL ----------------- */
-const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const indicators = document.querySelectorAll('.carousel-indicator');
-let counter = 0;
-function updateCarousel(){
-  carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
-  indicators.forEach(ind=>ind.classList.remove('active'));
-  indicators[counter].classList.add('active');
-}
-prevBtn.addEventListener('click', ()=>{
-  counter = (counter-1+carouselImages.length)%carouselImages.length;
-  updateCarousel();
-});
-nextBtn.addEventListener('click', ()=>{
-  counter = (counter+1)%carouselImages.length;
-  updateCarousel();
-});
-indicators.forEach((ind,i)=>{ ind.addEventListener('click',()=>{ counter=i; updateCarousel(); }); });
-setInterval(()=>{ counter = (counter+1)%carouselImages.length; updateCarousel(); },5000);
-
-/* ----------------- FORMULARIO ----------------- */
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  let valid = true;
-  const nombre = document.getElementById('nombre');
-  const correo = document.getElementById('correo');
-  const mensaje = document.getElementById('mensaje');
-  document.getElementById('form-success').textContent = "";
-  if(nombre.value.trim() === ""){ valid=false; nombre.classList.add('error'); document.getElementById('error-nombre').textContent="Nombre requerido"; }else{ nombre.classList.remove('error'); document.getElementById('error-nombre').textContent=""; }
-  if(correo.value.trim()==="" || !correo.value.includes("@")){ valid=false; correo.classList.add('error'); document.getElementById('error-correo').textContent="Correo inválido"; }else{ correo.classList.remove('error'); document.getElementById('error-correo').textContent=""; }
-  if(mensaje.value.trim()===""){ valid=false; mensaje.classList.add('error'); document.getElementById('error-mensaje').textContent="Mensaje requerido"; }else{ mensaje.classList.remove('error'); document.getElementById('error-mensaje').textContent=""; }
-  if(valid){ document.getElementById('form-success').textContent="¡Mensaje enviado con éxito!"; form.reset(); }
-});
+// Aquí van tus scripts de interactividad
 </script>
+
 </body>
 </html>
